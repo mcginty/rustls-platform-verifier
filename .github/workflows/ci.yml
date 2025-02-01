@@ -130,7 +130,8 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macos-latest
+          # Note: This runs on ARM64 and not x86_64.
+          - macos-15
           - windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -198,7 +199,7 @@ jobs:
 
   test_ios:
     name: "Test iOS (Catalyst)"
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
         with:
